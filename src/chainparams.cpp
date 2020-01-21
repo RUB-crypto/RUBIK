@@ -77,8 +77,8 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Wired 09/Jan/2014 The Grand Experiment Goes Live: Overstock.com Is Now Accepting Bitcoins";
-    const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
+    const char* pszTimestamp = "BBC Bitcoin: Should cryptocurrency owners make a will? - 07/Jan/2020.";
+    const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -197,7 +197,7 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 210240; // Note: actual number of blocks per calendar year with DGW v3 is ~200700 (for example 449750 - 249050)
+        consensus.nSubsidyHalvingInterval = 625000; // Note: actual number of blocks per calendar year with DGW v3 is ~200700 (for example 449750 - 249050)
         consensus.nMasternodePaymentsStartBlock = 100000; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 158000; // actual historical value
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
@@ -214,14 +214,14 @@ public:
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 15;
-        consensus.BIP34Height = 951;
-        consensus.BIP34Hash = uint256S("0x000001f35e70f7c5705f64c6c5cc3dea9449e74d5b5c7cf74dad1bcca14a8012");
-        consensus.BIP65Height = 619382; // 00000000000076d8fcea02ec0963de4abfd01e771fec0863f960c2c64fe6f357
-        consensus.BIP66Height = 245817; // 00000000000b1fa2dfa312863570e13fae9ca7b5566cb27e55422620b469aefa
-        consensus.DIP0001Height = 782208;
-        consensus.DIP0003Height = 1028160;
-        consensus.DIP0003EnforcementHeight = 1047200;
-        consensus.DIP0003EnforcementHash = uint256S("000000000000002d1734087b4c5afc3133e4e1c3e1a89218f62bcd9bb3d17f81");
+        consensus.BIP34Height = 0;
+        consensus.BIP34Hash = uint256S("0x00000c1cabf1dbbf939d23c4a455c1968a5297cd9d4d46e4d5217b5174d9bdd4");
+        consensus.BIP65Height = 0; // 00000000000076d8fcea02ec0963de4abfd01e771fec0863f960c2c64fe6f357
+        consensus.BIP66Height = 0; // 00000000000b1fa2dfa312863570e13fae9ca7b5566cb27e55422620b469aefa
+        consensus.DIP0001Height = 0;
+        consensus.DIP0003Height = 0;
+        consensus.DIP0003EnforcementHeight = 0;
+        consensus.DIP0003EnforcementHash = uint256S("00000c1cabf1dbbf939d23c4a455c1968a5297cd9d4d46e4d5217b5174d9bdd4");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 24 * 60 * 60; // Rubik: 1 day
         consensus.nPowTargetSpacing = 2.5 * 60; // Rubik: 2.5 minutes
@@ -269,7 +269,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0008].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000146103ebd818111fae85"); // 1067570
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // 1067570
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x000000000000001e09926bcf5fa4513d23e870a34f74e38200db99eb3f5b7a70"); // 1067570
@@ -287,15 +287,15 @@ public:
         nDefaultPort = 9921;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1390095618, 28917698, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1579602718, 2256790, 0x1e0ffff0, 1, 40 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000ffd590b1485b3caadc19b22e6379c733355108f107a430458cdf3407ab6"));
-        assert(genesis.hashMerkleRoot == uint256S("0xe0028eb9648db56b1ac77cf090b99048a8007e2bb64b68f092c03c7f56a662c7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000c1cabf1dbbf939d23c4a455c1968a5297cd9d4d46e4d5217b5174d9bdd4"));
+        assert(genesis.hashMerkleRoot == uint256S("0x10e0b253e7fbb5bdea3f6295d376176f985e21535ca840e166a491955eb82bb0"));
 
 
-        vSeeds.push_back(CDNSSeedData("rubik.org", "dnsseed.rubik.org"));
-        vSeeds.push_back(CDNSSeedData("rubikdot.io", "dnsseed.rubikdot.io"));
-        vSeeds.push_back(CDNSSeedData("masternode.io", "dnsseed.masternode.io"));
+//        vSeeds.push_back(CDNSSeedData("rubik.org", "dnsseed.rubik.org"));
+//        vSeeds.push_back(CDNSSeedData("rubikdot.io", "dnsseed.rubikdot.io"));
+//        vSeeds.push_back(CDNSSeedData("masternode.io", "dnsseed.masternode.io"));
 
         // Rubik addresses start with 'X'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,76);
@@ -336,33 +336,7 @@ public:
         nMinSporkKeys = 1;
         fBIP9CheckMasternodesUpgraded = true;
 
-        checkpointData = (CCheckpointData) {
-            boost::assign::map_list_of
-            (  1500, uint256S("0x000000aaf0300f59f49bc3e970bad15c11f961fe2347accffff19d96ec9778e3"))
-            (  4991, uint256S("0x000000003b01809551952460744d5dbb8fcbd6cbae3c220267bf7fa43f837367"))
-            (  9918, uint256S("0x00000000213e229f332c0ffbe34defdaa9e74de87f2d8d1f01af8d121c3c170b"))
-            ( 16912, uint256S("0x00000000075c0d10371d55a60634da70f197548dbbfa4123e12abfcbc5738af9"))
-            ( 23912, uint256S("0x0000000000335eac6703f3b1732ec8b2f89c3ba3a7889e5767b090556bb9a276"))
-            ( 35457, uint256S("0x0000000000b0ae211be59b048df14820475ad0dd53b9ff83b010f71a77342d9f"))
-            ( 45479, uint256S("0x000000000063d411655d590590e16960f15ceea4257122ac430c6fbe39fbf02d"))
-            ( 55895, uint256S("0x0000000000ae4c53a43639a4ca027282f69da9c67ba951768a20415b6439a2d7"))
-            ( 68899, uint256S("0x0000000000194ab4d3d9eeb1f2f792f21bb39ff767cb547fe977640f969d77b7"))
-            ( 74619, uint256S("0x000000000011d28f38f05d01650a502cc3f4d0e793fbc26e2a2ca71f07dc3842"))
-            ( 75095, uint256S("0x0000000000193d12f6ad352a9996ee58ef8bdc4946818a5fec5ce99c11b87f0d"))
-            ( 88805, uint256S("0x00000000001392f1652e9bf45cd8bc79dc60fe935277cd11538565b4a94fa85f"))
-            ( 107996, uint256S("0x00000000000a23840ac16115407488267aa3da2b9bc843e301185b7d17e4dc40"))
-            ( 137993, uint256S("0x00000000000cf69ce152b1bffdeddc59188d7a80879210d6e5c9503011929c3c"))
-            ( 167996, uint256S("0x000000000009486020a80f7f2cc065342b0c2fb59af5e090cd813dba68ab0fed"))
-            ( 207992, uint256S("0x00000000000d85c22be098f74576ef00b7aa00c05777e966aff68a270f1e01a5"))
-            ( 312645, uint256S("0x0000000000059dcb71ad35a9e40526c44e7aae6c99169a9e7017b7d84b1c2daf"))
-            ( 407452, uint256S("0x000000000003c6a87e73623b9d70af7cd908ae22fee466063e4ffc20be1d2dbc"))
-            ( 523412, uint256S("0x000000000000e54f036576a10597e0e42cc22a5159ce572f999c33975e121d4d"))
-            ( 523930, uint256S("0x0000000000000bccdb11c2b1cfb0ecab452abf267d89b7f46eaf2d54ce6e652c"))
-            ( 750000, uint256S("0x00000000000000b4181bbbdddbae464ce11fede5d0292fb63fdede1e7c8ab21c"))
-            ( 888900, uint256S("0x0000000000000026c29d576073ab51ebd1d3c938de02e9a44c7ee9e16f82db28"))
-            ( 967800, uint256S("0x0000000000000024e26c7df7e46d673724d223cf4ca2b2adc21297cc095600f4"))
-            ( 1067570, uint256S("0x000000000000001e09926bcf5fa4513d23e870a34f74e38200db99eb3f5b7a70"))
-        };
+        checkpointData = (CCheckpointData) {};
 
         chainTxData = ChainTxData{
             1557610432, // * UNIX timestamp of last known number of transactions (Block 1068571)
