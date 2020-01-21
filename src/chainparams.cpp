@@ -222,7 +222,7 @@ public:
         consensus.DIP0003Height = 0;
         consensus.DIP0003EnforcementHeight = 0;
         consensus.DIP0003EnforcementHash = uint256S("00000c1cabf1dbbf939d23c4a455c1968a5297cd9d4d46e4d5217b5174d9bdd4");
-        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
+        consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 24 * 60 * 60; // Rubik: 1 day
         consensus.nPowTargetSpacing = 2.5 * 60; // Rubik: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
