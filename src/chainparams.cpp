@@ -77,7 +77,7 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "BBC Bitcoin: Should cryptocurrency owners make a will? - 07/Jan/2020.";
+    const char* pszTimestamp = "Wired 09/Jan/2014 The Grand Experiment Goes Live: Overstock.com Is Now Accepting Bitcoins";
     const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -287,11 +287,11 @@ public:
         nDefaultPort = 9921;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1579609533, 4626753, 0x1E0FFFF0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1390095618, 28917698, 0x1E0FFFF0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-        assert(consensus.hashGenesisBlock == uint256S("0x00000bcde7c7387bbf93d2afbbda894867161b97c7ddbbcf4f5af2cc89d5318c"));
-        assert(genesis.hashMerkleRoot == uint256S("0x7e34937da59a2b5f23de410da79fb81dc357db0a62c96bf964a17c223442ca55"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000ffd590b1485b3caadc19b22e6379c733355108f107a430458cdf3407ab6"));
+        assert(genesis.hashMerkleRoot == uint256S("0xe0028eb9648db56b1ac77cf090b99048a8007e2bb64b68f092c03c7f56a662c7"));
 
 
 //        vSeeds.push_back(CDNSSeedData("rubik.org", "dnsseed.rubik.org"));
