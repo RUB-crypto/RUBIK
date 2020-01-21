@@ -1,6 +1,6 @@
-usr/local/bin/dash-qt usr/bin
-share/pixmaps/dash32.xpm usr/share/pixmaps
-share/pixmaps/dash16.xpm usr/share/pixmaps
-share/pixmaps/dash128.png usr/share/pixmaps
-debian/dash-qt.desktop usr/share/applications
-debian/dash-qt.protocol usr/share/kde4/services/
+usr/local/bin/rubik-qt usr/bin
+share/pixmaps/rubik32.xpm usr/share/pixmaps
+share/pixmaps/rubik16.xpm usr/share/pixmaps
+share/pixmaps/rubik128.png usr/share/pixmaps
+debian/rubik-qt.desktop usr/share/applications
+debian/rubik-qt.protocol usr/share/kde4/services/

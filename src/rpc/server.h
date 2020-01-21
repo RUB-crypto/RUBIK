@@ -143,7 +143,7 @@ public:
 };
 
 /**
- * Dash RPC command dispatcher.
+ * Rubik RPC command dispatcher.
  */
 class CRPCTable
 {

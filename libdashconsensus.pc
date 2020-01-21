@@ -1,0 +1,11 @@
+prefix=/Users/grindstone/C++Project/RUBIK/depends/x86_64-apple-darwin19.2.0
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Rubik Core consensus library
+Description: Library for the Bitcoin consensus protocol.
+Version: 0.14.0
+Libs: -L${libdir} -lrubikconsensus
+Cflags: -I${includedir}
+Requires.private: libcrypto

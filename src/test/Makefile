@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. dash_test
+	$(MAKE) -C .. rubik_test
 clean:
-	$(MAKE) -C .. dash_test_clean
+	$(MAKE) -C .. rubik_test_clean
 check:
-	$(MAKE) -C .. dash_test_check
+	$(MAKE) -C .. rubik_test_check

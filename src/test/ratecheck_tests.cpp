@@ -1,8 +1,8 @@
-// Copyright (c) 2014-2018 The Dash Core developers
+// Copyright (c) 2014-2018 The Rubik Core developers
 
 #include "governance.h"
 
-#include "test/test_dash.h"
+#include "test/test_rubik.h"
 
 #include <boost/test/unit_test.hpp>
 

@@ -1,15 +1,15 @@
 [Unit]
-Description=Dash's distributed currency daemon
+Description=Rubik's distributed currency daemon
 After=network.target
 
 [Service]
-User=dashcore
-Group=dashcore
+User=rubikcore
+Group=rubikcore
 
 Type=forking
-PIDFile=/var/lib/dashd/dashd.pid
-ExecStart=/usr/bin/dashd -daemon -pid=/var/lib/dashd/dashd.pid \
--conf=/etc/dashcore/dash.conf -datadir=/var/lib/dashd -disablewallet
+PIDFile=/var/lib/rubikd/rubikd.pid
+ExecStart=/usr/bin/rubikd -daemon -pid=/var/lib/rubikd/rubikd.pid \
+-conf=/etc/rubikcore/rubik.conf -datadir=/var/lib/rubikd -disablewallet
 
 Restart=always
 PrivateTmp=true
