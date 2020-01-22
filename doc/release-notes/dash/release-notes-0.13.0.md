@@ -526,7 +526,7 @@ See detailed [set of changes](https://github.com/rubikpay/rubik/compare/v0.12.3.
 - [`09730e1c5`](https://github.com/rubikpay/rubik/commit/09730e1c5) Bail out from update methods in MasternodeList when shutdown is requested (#2551)
 - [`18cd5965c`](https://github.com/rubikpay/rubik/commit/18cd5965c) Sort recipients in SendCoins dialog via BIP69 rule (#2546)
 - [`9100c69eb`](https://github.com/rubikpay/rubik/commit/9100c69eb) Allow filtering by proTxHash on DIP3 MN tab (#2532)
-- [`216119921`](https://github.com/rubikpay/rubik/commit/216119921) Fix wrong total MN count in UI and "masternode count" RPC (#2527)
+- [`216119999`](https://github.com/rubikpay/rubik/commit/216119999) Fix wrong total MN count in UI and "masternode count" RPC (#2527)
 - [`8f8878a94`](https://github.com/rubikpay/rubik/commit/8f8878a94) Add dummy/hidden column to carry the proTxHash per MN list entry... (#2530)
 - [`a4ea816b2`](https://github.com/rubikpay/rubik/commit/a4ea816b2) use aqua gui theme (#2472)
 - [`aa495405b`](https://github.com/rubikpay/rubik/commit/aa495405b) [GUI] Realign tx filter widgets (#2485)

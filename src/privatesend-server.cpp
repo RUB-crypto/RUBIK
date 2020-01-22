@@ -754,7 +754,7 @@ bool CPrivateSendServer::CreateNewSession(const CPrivateSendAccept& dsa, PoolMes
 
     // start new session
     nMessageIDRet = MSG_NOERR;
-    nSessionID = GetRandInt(992199) + 1;
+    nSessionID = GetRandInt(999999) + 1;
     nSessionDenom = dsa.nDenom;
     nSessionMaxParticipants = CPrivateSend::GetMinPoolParticipants() + GetRandInt(CPrivateSend::GetMaxPoolParticipants() - CPrivateSend::GetMinPoolParticipants() + 1);
 
